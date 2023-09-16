@@ -1,1 +1,53 @@
+import 'dart:math';
+
+//Simple Interest
+void main() {
+  var calculateTotalInterest = () {
+    double totalAmount = 100000.0;
+    double interestRate = 5.0;
+    double tenure = 3.0;
+    return (totalAmount * (interestRate / 100)) * tenure;
+  };
+
+
+  double totalInterest = calculateTotalInterest();
+
+  //custom output by using print
+  print("Simple Interest : ");
+  print("");
+  //print("--------------------------------------");
+  print("Total Amount " + "|" + " Tenure " + "|" + " Interest Rate");
+  print("-------------|--------|---------------");
+  print("  100000.0 " + "  |" + "  3.0 " + "  |" + "    5.0");
+  print("--------------------------------------");
+  print('Total Interest = $totalInterest');
+  print("\n");
+
+
+    // Compound Interest
+    double principalAmount  = 100000.0;
+    double annualInterestRate = 5.0;
+    double compoundFrequency = 12.0;
+    double tenureInYears = 3.0;
+
+
+    double decimalInterestRate = annualInterestRate / 100.0;
+
+
+    double totalInterestCompound = principalAmount *
+        (pow(1 + decimalInterestRate / compoundFrequency,
+            compoundFrequency * tenureInYears) -
+            1);
+
+  ///custom output by using print
+  print("Compound Interest : ");
+  print("");
+  //print("--------------------------------------");
+  print("Total Amount " + "|" + " Tenure " + "|" + " Interest Rate");
+  print("-------------|--------|---------------");
+  print("  100000.0 " + "  |" + "  3.0 " + "  |" + "    5.0");
+  print("--------------------------------------");
+  print('Total Interest = $totalInterestCompound');
+  }
+
 
