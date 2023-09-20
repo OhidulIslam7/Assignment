@@ -1,0 +1,57 @@
+import 'dart:math';
+
+void main() {
+  var random = Random();
+
+  var calculateTotalInterest = () {
+    double totalAmount = random.nextDouble() * 100000.0 + 50000.0;
+    double interestRate = random.nextDouble() * 10.0 + 1.0;
+    double tenure = random.nextDouble() * 5.0 + 1.0;
+
+    return (totalAmount * (interestRate / 100)) * tenure;
+  };
+
+  // Store the random values for the custom print statement
+  double totalAmount = random.nextDouble() * 100000.0 + 50000.0;
+  double interestRate = random.nextDouble() * 10.0 + 1.0;
+  double tenure = random.nextDouble() * 5.0 + 1.0;
+
+  double totalInterest = calculateTotalInterest();
+
+  // Custom output by using print
+  print("Simple Interest : ");
+  print("");
+  print("Total Amount " + "|" + " Tenure " + "|" + " Interest Rate");
+  print("-------------|--------|---------------");
+  print("  ${totalAmount.toStringAsFixed(2)} " + "  |" + "  ${tenure.toStringAsFixed(2)} " + "  |" + "    ${interestRate.toStringAsFixed(2)}");
+  print("--------------------------------------");
+  print('Total Interest = $totalInterest');
+  print("\n");
+
+  // Compound Interest
+  double principalAmount = random.nextDouble() * 100000.0 + 50000.0;
+  double annualInterestRate = random.nextDouble() * 10.0 + 1.0;
+  double compoundFrequency = random.nextDouble() * 12.0 + 1.0;
+  double tenureInYears = random.nextDouble() * 5.0 + 1.0;
+
+  double decimalInterestRate = annualInterestRate / 100.0;
+
+  double totalInterestCompound = principalAmount *
+      (pow(1 + decimalInterestRate / compoundFrequency,
+          compoundFrequency * tenureInYears) -
+          1);
+
+  // Store the random values for the custom print statement
+  totalAmount = principalAmount;
+  tenure = tenureInYears;
+  interestRate = annualInterestRate;
+
+  // Custom output by using print
+  print("Compound Interest : ");
+  print("");
+  print("Total Amount " + "|" + " Tenure " + "|" + " Interest Rate");
+  print("-------------|--------|---------------");
+  print("  ${totalAmount.toStringAsFixed(2)} " + "  |" + "  ${tenure.toStringAsFixed(2)} " + "  |" + "    ${interestRate.toStringAsFixed(2)}");
+  print("--------------------------------------");
+  print('Total Interest = $totalInterestCompound');
+}
